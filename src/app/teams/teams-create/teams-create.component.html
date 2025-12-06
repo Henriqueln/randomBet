@@ -1,0 +1,43 @@
+<h2>Create Team</h2>
+
+<form (ngSubmit)="onSubmit()" #teamForm="ngForm">
+
+  <!-- Team Name -->
+  <label for="name">Team Name</label>
+  <input 
+    type="text" 
+    id="name" 
+    [(ngModel)]="team.name" 
+    name="name" 
+    required
+  />
+
+  <!-- Logo URL -->
+  <label for="logo">Logo URL</label>
+  <input 
+    type="text" 
+    id="logo" 
+    [(ngModel)]="team.logo" 
+    name="logo"
+    required
+  />
+
+  <!-- League Select -->
+  <label for="league">League</label>
+  <select 
+    id="league" 
+    [(ngModel)]="team.league" 
+    name="league" 
+    required
+  >
+    <option value="" disabled selected>Select a league</option>
+    <option *ngFor="let league of leagues" [value]="league">
+      {{ league }}
+    </option>
+  </select>
+
+  <button type="submit" [disabled]="teamForm.invalid">
+    Create Team
+  </button>
+
+</form>

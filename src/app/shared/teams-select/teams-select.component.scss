@@ -1,0 +1,37 @@
+.teams-select-container {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+}
+
+.teams-select-container input {
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.teams-select-container input:focus {
+  border-color: #42a5f5;
+}
+
+.teams-select-container select {
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: white;
+  transition: border-color 0.2s;
+}
+
+.teams-select-container select:focus {
+  border-color: #42a5f5;
+}
+
+.teams-select-container option {
+  padding: 4px 8px;
+}

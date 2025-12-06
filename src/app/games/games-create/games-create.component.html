@@ -1,0 +1,54 @@
+<h2>Create Game</h2>
+
+<form>
+
+  <!-- Active Team -->
+  <label for="activeTeam">Active Team</label>
+   <app-teams-select 
+    [teams]="activeTeams" 
+    (selectedTeam)="onActiveTeamSelected($event)">
+  </app-teams-select>
+
+  <!-- Oposing Team -->
+  <label for="oposingTeam">Oposing Team</label>
+  <app-teams-select 
+    [teams]="teams" 
+    (selectedTeam)="onOposingTeamSelected($event)">
+  </app-teams-select>
+
+  <!-- Platform -->
+  <label for="platform">Platform</label>
+  <select id="platform" [(ngModel)]="game.platform" name="platform" required>
+    <option value="" disabled selected>Select platform</option>
+    <option *ngFor="let p of platforms" [value]="p">{{ p }}</option>
+  </select>
+
+  <!-- Date -->
+  <label for="date">Date</label>
+  <input
+    type="date"
+    id="date"
+    [ngModel]="game.date | date:'yyyy-MM-dd'"
+    (ngModelChange)="onDateChange($event)"
+    name="date"
+    required
+  />
+
+  <!-- Result -->
+  <label for="result">Result</label>
+  <select id="result" [(ngModel)]="game.result" name="result" required>
+    <option [value]="gameResults.FUTURE">Future</option>
+    <option [value]="gameResults.WIN">Win</option>
+    <option [value]="gameResults.LOSE">Lose</option>
+  </select>
+
+  <!-- Odds -->
+  <label for="odds">Odds</label>
+  <input type="number" id="odds" [(ngModel)]="game.odds" name="odds" required step="0.01" (change)="calculateStuff()" />
+
+  <!-- Bet -->
+  <label for="bet">Bet</label>
+  <input type="number" id="bet" [(ngModel)]="game.bet" name="bet" required step="0.1" />
+
+  <button type="button" (click)="create()">Create Game</button>
+</form>

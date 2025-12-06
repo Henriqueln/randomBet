@@ -1,0 +1,24 @@
+<h2>Teams List</h2>
+<button (click)="addTeam()">Add Team</button>
+
+
+<table *ngIf="!loading">
+  <thead>
+    <tr>
+      <th>Logo</th>
+      <th>Name</th>
+      <th>League</th>
+      <th>ID</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let team of teams">
+      <td>
+        <img [src]="'assets/' + team.logo + '.png'" alt="{{team.name}} logo" class="team-logo" />
+      </td>
+      <td>{{ team.name }}</td>
+      <td>{{ team.league }}</td>
+      <td>{{ team._id }}</td>
+    </tr>
+  </tbody>
+</table>

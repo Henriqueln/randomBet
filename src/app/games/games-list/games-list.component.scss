@@ -1,0 +1,114 @@
+.dashboard-container {
+  padding: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+  vertical-align: middle;
+}
+
+.team-logo {
+  height: 50px;
+  width: auto;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+
+/* Switch styling */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .2s;
+  border-radius: 20px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  transition: .2s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #42a5f5;
+}
+
+input:checked + .slider:before {
+  transform: translateX(20px);
+}
+
+.tri-state-button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 500;
+  color: white;
+  transition: background-color 0.2s, transform 0.1s;
+  min-width: 100px;
+}
+
+/* Not Set state */
+.tri-state-button.not-set {
+  background-color: #9e9e9e; /* grey */
+}
+
+/* Won state */
+.tri-state-button.won {
+  background-color: #4caf50; /* green */
+}
+
+/* Lose state */
+.tri-state-button.lose {
+  background-color: #f44336; /* red */
+}
+
+.tri-state-button:active {
+  transform: scale(0.95); /* small click animation */
+}
+
+.save-button {
+  padding: 6px 12px;
+  background-color: #42a5f5;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.save-button:hover {
+  background-color: #1e88e5;
+}
+

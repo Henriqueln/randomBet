@@ -1,0 +1,18 @@
+<div class="teams-select-container">
+  
+  <!-- Text filter -->
+  <input
+    type="text"
+    placeholder="Search team..."
+    [(ngModel)]="searchText"
+    (input)="filterTeams()"
+  />
+
+  <!-- Select dropdown -->
+  <select [(ngModel)]="selectedTeamId" (change)="onSelectTeam()" [size]="dropdownSize">
+    <option *ngFor="let team of filteredTeams" [value]="team._id">
+      {{ team.name }}
+    </option>
+  </select>
+
+</div>
