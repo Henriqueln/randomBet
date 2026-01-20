@@ -6,7 +6,9 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "github-build": "ng build --configuration production --base-href /randomBet/",
+    "github-deploy": "npx angular-cli-ghpages --dir=dist/randomBet --no-silent"
   },
   "private": true,
   "dependencies": {
